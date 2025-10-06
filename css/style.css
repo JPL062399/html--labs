@@ -1,0 +1,101 @@
+
+*{ box-sizing:border-box; }
+html,body{ margin:0; font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Arial; color:#111; }
+
+.board{
+  background:#e7e7e7;
+  padding:22px;
+  min-height:100vh;
+}
+.board-title{
+  color:#9aa0a6;
+  font-size:14px;
+  margin-bottom:18px;
+}
+
+.top-row{
+  background:#eee;
+  padding:30px 28px 10px;
+  border-radius:6px;
+}
+.pill{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:200px; height:60px;
+  border-radius:6px;
+  margin-right:28px;
+  user-select:none;
+  font-size:18px;
+}
+.pill-solid{ background:#111; color:#fff; }
+.pill-outline{ border:1px solid #111; color:#111; background:#f6f6f6; }
+
+.cols{
+  display:grid;
+  grid-template-columns: 270px 270px 1fr;
+  gap:40px;
+  padding:28px;
+  background:#eee;
+  border-radius:6px;
+  margin-top:16px;
+}
+
+.card-left{
+  width:270px;
+  border:1px solid #cfcfcf;
+  background:#fff;
+}
+.left-img{
+  width:100%; height:270px; background:#000; position:relative;
+}
+.left-img::after{
+  content:""; position:absolute; inset:0;
+  width:64px; height:64px; background:#fff; border-radius:8px;
+  top:50%; left:50%; transform:translate(-50%,-50%);
+}
+.left-foot{ padding:18px; background:#fff; }
+.left-title{ font-size:18px; margin-bottom:24px; }
+.left-link{ color:#111; text-decoration:none; font-size:14px; }
+
+.card-mid{
+  width:270px; height:420px;
+  border:1px solid #8f8f8f; background:#fff;
+  border-radius:4px;
+  display:flex; flex-direction:column; align-items:center;
+  padding:26px 24px;
+}
+.dot{
+  width:56px; height:56px; background:#000; border-radius:50%;
+  margin-bottom:14px;
+}
+.mid-title{ font-size:20px; font-weight:700; }
+.mid-sub{ color:#6b7280; font-size:14px; margin-top:4px; margin-bottom:18px; }
+.features{
+  list-style:none; padding:0; margin:0 0 28px;
+  width:100%; color:#9aa0a6; font-size:14px;
+}
+.features li{ padding:8px 0; }
+.start-pill{
+  margin-top:auto;
+  border:1px solid #111; border-radius:6px;
+  height:40px; width:150px; display:flex; align-items:center; justify-content:center;
+  font-size:14px; background:#fff; color:#111;
+}
+
+.card-right{ display:block; }
+.right-img{ width:370px; height:270px; background:#000; margin-bottom:24px; }
+.right-title{
+  max-width:480px; font-size:24px; line-height:1.25; margin:0 0 14px;
+}
+.right-link{ color:#111; text-decoration:none; font-size:14px; }
+
+@media (max-width: 980px){
+  .cols{ grid-template-columns: 270px 1fr; }
+  .right-img{ width:100%; max-width:370px; }
+}
+@media (max-width: 640px){
+  .cols{ grid-template-columns: 1fr; }
+  .card-left, .card-mid{ width:100%; }
+  .right-img{ width:100%; }
+}
